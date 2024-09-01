@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn/home_screen.dart';
-import 'package:learn/model/productView.dart';
+import 'package:learn/productView.dart';
 
 void main() {
   runApp(const MyApp());
