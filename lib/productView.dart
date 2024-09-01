@@ -46,7 +46,7 @@ class ProductView extends StatelessWidget {
           Colors.purple,
           Colors.grey,
         ]));
-        products.add(Product(
+    products.add(Product(
         name: 'SamSung S10+',
         urlImage:
             'https://www.sammobile.com/wp-content/uploads/2019/06/galaxy-s10-plus-2.jpg',
@@ -99,13 +99,13 @@ class ProductView extends StatelessWidget {
 
   Widget buildWidgetProduct(BuildContext context, Product p) {
     return Container(
-      height: 150,
+      height: 130,
       margin: const EdgeInsets.all(10),
       // color: Colors.amberAccent,
       child: Row(
         children: [
           Container(
-            height: 150,
+            height: 130,
             width: MediaQuery.of(context).size.width / 3,
             decoration: BoxDecoration(
                 // color: Colors.amber,
@@ -140,7 +140,7 @@ class ProductView extends StatelessWidget {
                 ),
                 Text(
                   p.description,
-                  style: const TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Colors.grey[600]),
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -160,6 +160,7 @@ class ProductView extends StatelessWidget {
                         Text(
                           p.oldPrice,
                           style: const TextStyle(
+                              fontWeight: FontWeight.bold,
                               decoration: TextDecoration.lineThrough),
                         ),
                         Text(
@@ -172,126 +173,27 @@ class ProductView extends StatelessWidget {
                       ],
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         p.color != null ? const Text('Color') : const Text(''),
+                        const SizedBox(
+                          height: 3,
+                        ),
                         Row(
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              height: 25,
-                              width: 25,
-                              color:p.color?[0]
-                            ),
+                                height: 15, width: 15, color: p.color?[0]),
                             Container(
                               margin: const EdgeInsets.symmetric(horizontal: 3),
-                              height: 25,
-                              width: 25,
+                              height: 15,
+                              width: 15,
                               color: p.color?[1],
                             ),
                             Container(
-                              height: 25,
-                              width: 25,
+                              height: 15,
+                              width: 15,
                               color: p.color?[2],
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 3,
-                        )
-                      ],
-                    )
-                  ],
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Container buildProduct(BuildContext context, Product p) {
-    return Container(
-      // color: Colors.blueGrey[100],
-      margin: const EdgeInsets.all(10),
-      height: 150,
-      child: Row(
-        children: [
-          Container(
-            height: 150,
-            decoration: BoxDecoration(
-                color: Colors.amber,
-                borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(
-                    image: NetworkImage(
-                      p.urlImage,
-                    ),
-                    fit: BoxFit.fill)),
-          ),
-          const SizedBox(
-            width: 15,
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            // color: Colors.blueAccent,
-            // height: 150,
-            width: MediaQuery.of(context).size.width * 2 / 3 - 35,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  p.name,
-                  style: const TextStyle(
-                      fontSize: 13, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  p.description,
-                  style: const TextStyle(color: Colors.grey),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  p.oldPrice,
-                  style:
-                      const TextStyle(decoration: TextDecoration.lineThrough),
-                ),
-                // const SizedBox(
-                //   height: 5,
-                // ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      p.newPrice,
-                      style: TextStyle(
-                          color: Colors.red[400], fontWeight: FontWeight.bold),
-                    ),
-                    Column(
-                      children: [
-                        const Text('Color'),
-                        Row(
-                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              height: 25,
-                              width: 25,
-                              color: Colors.teal,
-                            ),
-                            Container(
-                              margin: const EdgeInsets.symmetric(horizontal: 3),
-                              height: 25,
-                              width: 25,
-                              color: Colors.amber,
-                            ),
-                            Container(
-                              height: 25,
-                              width: 25,
-                              color: Colors.blue,
                             ),
                           ],
                         ),
